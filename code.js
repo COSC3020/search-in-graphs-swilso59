@@ -46,7 +46,7 @@ function depthFirstSearch(graph, startNode, targetNode) {
 
 
 
-// search-in-graphs-Dhruv8806, search-in-graphs-ClaytonBrown4741, search-in-graphs-ziyuWang6666 These were some of the repositories I reviewed to implement my code. 
+// search-in-graphs-Dhruv8806, search-in-graphs-ClaytonBrown4741, search-in-graphs-ziyuWang6666, search-in-graphs-20gbrown These were some of the repositories I reviewed to implement my code. 
 // I used https://stackoverflow.com/questions/12864004/tracing-and-returning-a-path-in-depth-first-search
 // I also recieved some help form the TA. 
 
