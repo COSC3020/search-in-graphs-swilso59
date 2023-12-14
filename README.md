@@ -22,6 +22,15 @@ code, but you can base yours on test code from other exercises.
 What is the worst-case big $\Theta$ complexity of your implementation? Add your
 answer, including your reasoning, to this markdown file.
 
+- The time complexity is $\O(V + E)$.
+
+- The $\O(V)$ part comes from the explore function were the nodes are marked visted.
+  In the worst case each node may be visted once.
+
+- The $\O(E)$ is the part of the explore function that iterates through the neighbors of each node.
+  In the worst case each edge is traversed once.
+  
+
 ## Bonus
 
 Implement and analyze breadth-first search.
