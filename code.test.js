@@ -26,3 +26,4 @@ if (path.length > 0 && path[path.length - 1] === targetNode) {
 } else {
     console.log(`No valid path found from ${startNode} to ${targetNode}`);
 }
+ jsc.assert(test);
