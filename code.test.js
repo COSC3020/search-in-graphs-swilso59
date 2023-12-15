@@ -1,7 +1,8 @@
 const fs = require('fs');
 const jsc = require('jsverify');
 
-eval(fs.readFileSync('code.js' + '');
+// Assuming 'code.js' contains the implementation of depthFirstSearch
+eval(fs.readFileSync('code.js', 'utf-8'));
 
 const adjList = {
     'A': ['B', 'C'],
@@ -17,13 +18,19 @@ const adjList = {
 const startNode = 'G';
 const targetNode = 'Z';
 
-// Call the depthFirstSearch function with the provided graph and nodes
-const path = depthFirstSearch(graph, startNode, targetNode);
+// Property-based testing using jsverify
+const test = jsc.property('Depth First Search should find a valid path or return an empty array', () => {
+    const path = depthFirstSearch(adjList, startNode, targetNode);
+    
+    // Ensure that the path is valid (either empty or ending at the target node)
+    return path.length === 0 || path[path.length - 1] === targetNode;
+});
 
-// Validate and display the result
-if (path.length > 0 && path[path.length - 1] === targetNode) {
-    console.log(`Path from ${startNode} to ${targetNode}: ${path.join(' -> ')}`);
+jsc.assert(test);
+
+// Optionally, log the result of the test
+if (test) {
+    console.log('Property-based test passed!');
 } else {
-    console.log(`No valid path found from ${startNode} to ${targetNode}`);
+    console.log('Property-based test failed!');
 }
- jsc.assert(test);
