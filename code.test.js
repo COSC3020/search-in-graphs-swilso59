@@ -2,7 +2,7 @@ const fs = require('fs');
 const jsc = require('jsverify');
 
 // Assuming depthFirstSearch and test are defined in 'code.js'
-eval(fs.readFileSync('code.js'));
+eval(fs.readFileSync('code.js') + '');
 
 const adjList = {
     'A': ['B', 'C'],
@@ -16,7 +16,7 @@ const adjList = {
 };
 
 const startNode = 'G';
-const targetNode = 'Z';
+const targetNode = 'E';
 
 // Call the depthFirstSearch function with the provided graph and nodes
 const path = depthFirstSearch(adjList, startNode, targetNode);
